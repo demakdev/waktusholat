@@ -6,6 +6,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\TakmirController;
+use App\Http\Controllers\KeuanganController;
 
 
 require __DIR__.'/settings.php';
@@ -24,3 +26,7 @@ Route::get('/display', [DisplayController::class, 'show'])->name('display');
 Route::resource('pengumuman', PengumumanController::class);
 
 Route::resource('kegiatan', KegiatanController::class);
+
+Route::resource('keuangan', KeuanganController::class);
+
+Route::resource('takmir', TakmirController::class);
