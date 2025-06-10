@@ -10,10 +10,10 @@ class PengumumanController extends Controller
 {
     public function index()
     {
-        $pengumumen = Pengumuman::latest()->get();
+        $pengumumans = Pengumuman::latest()->get();
 
         return Inertia::render('pengumuman/Index', [
-            'pengumumen' => $pengumumen
+            'pengumumans' => $pengumumans
         ]);
     }
 
