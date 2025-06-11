@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 
 class DisplayController extends Controller
 {
-    public function show(): Response{
+    public function index(): Response{
 
         //nanti diambil dari database Masjid Sesuai data User
         $mosqueName = 'Masjid Al-Falah';
@@ -21,7 +21,6 @@ class DisplayController extends Controller
         $method = 20;
 
         $template = 'Modern';// nanti bisa ambil dari database setting, pilihannya sesuai templatye yang tersedia
-        $view = 'display/'.$template;
         $runningText = 'Selamat datang di Masjid Al-Falah. Jaga kebersihan dan ketenangan masjid.'; // nanti bisa ambil dari database running_text
         $embedVideoId = 'nJrzkPxTRbI'; // ID video youtube
         
@@ -66,7 +65,7 @@ class DisplayController extends Controller
         );
 
         
-        return Inertia::render( $view, [
+        return Inertia::render('display/Index', [
             'prayerTimes' => $prayerTimes,
             'gregorianDate' =>  $gregorianDate,
             'hijriDate' => $hijriDate,
@@ -74,7 +73,7 @@ class DisplayController extends Controller
             'mosqueAddress' =>  $mosqueAddress,
             'runningText' => $runningText,
             'embedVideoId' => $embedVideoId,
-            'template' => 'classic', // nanti bisa ambil dari database setting
+            'activeTemplate' => 'modern', // nanti bisa ambil dari database setting
         ]);
     }
 }
