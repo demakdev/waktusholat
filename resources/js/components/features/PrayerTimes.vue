@@ -12,8 +12,8 @@
   </section>
 </template>
 
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   prayerTimes: {
     type: Object,
     required: true

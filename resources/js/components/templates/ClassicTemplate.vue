@@ -43,7 +43,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import PrayerTimes from '@/components/features/PrayerTimes.vue'
 import { useClock } from '@/composables/useClock'
 import { usePrayerHighlighter } from '@/composables/usePrayerHighlighter'
