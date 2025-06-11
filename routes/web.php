@@ -21,7 +21,7 @@ Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/display', [DisplayController::class, 'show'])->name('display');
+Route::get('/display', [DisplayController::class, 'index'])->name('display');
 
 Route::resource('pengumuman', PengumumanController::class);
 
